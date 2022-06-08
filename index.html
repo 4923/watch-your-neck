@@ -34,7 +34,7 @@
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
         // the link to your model provided by Teachable Machine export panel
-        const URL = "./project/app_turtle/my_model/";
+        const URL = "my_model/";
         let model, webcam, ctx, labelContainer, maxPredictions;
 
         // 예측 시작
@@ -90,6 +90,7 @@
 
             // finally draw the poses
             drawPose(pose);
+            return prediction;
         }
 
         function drawPose(pose) {
@@ -106,5 +107,9 @@
 
         // webapp 실행 즉시 예측하기 위해 추가 
         init();
+
+
     </script>
+
+
 </div>
