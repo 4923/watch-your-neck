@@ -90,7 +90,8 @@
             drawPose(pose);
 
             const resultBlock = document.querySelector("#prediction");
-            const resultValue = document.createTextNode(prediction.toString());
+            let turtleProb = prediction[0].probability;
+            const resultValue = document.createTextNode(turtleProb.toString());
             if (resultBlock.firstElementChild === null) {
 
                 resultBlock.appendChild(resultValue);
