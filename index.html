@@ -90,16 +90,18 @@
             drawPose(pose);
 
             const resultBlock = document.querySelector("#prediction");
-            let turtleProb = prediction[0].probability;
-            const resultValue = document.createTextNode(turtleProb.toString());
-            if (resultBlock.firstChild === null) {
 
+            // prediction 수치 스타일링
+            const resultValue = document.createElement("span");
+            const turtleProb = document.createTextNode((prediction[0].probability).toString());
+            resultValue.appendChild(turtleProb);
+
+            if (resultBlock.firstElementChild === null) {
                 resultBlock.appendChild(resultValue);
             }
             else {
-                resultBlock.removeChild(resultBlock.firstChild)
+                resultBlock.removeChild(resultBlock.firstElementChild)
             }
-            return prediction;
         }
 
         function drawPose(pose) {
