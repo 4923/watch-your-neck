@@ -92,12 +92,12 @@
             const resultBlock = document.querySelector("#prediction");
             let turtleProb = prediction[0].probability;
             const resultValue = document.createTextNode(turtleProb.toString());
-            if (resultBlock.firstElementChild === null) {
+            if (resultBlock.firstChild === null) {
 
                 resultBlock.appendChild(resultValue);
             }
             else {
-                resultBlock.removeChild(resultBlock.firstElementChild)
+                resultBlock.removeChild(resultBlock.firstChild)
             }
             return prediction;
         }
