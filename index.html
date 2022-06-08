@@ -10,9 +10,7 @@
 </head>
 
 <div align="center">
-    <img src="https://github.com/VENCLFIT/watch-your-neck/blob/main/project/static/images/icon-160x160.png?raw=true"
-        width="100">
-    <small>내가 꿈꾸는 내가 되는 시간: VENCLEFIT</small>
+    <img src="./images/V.png" width="30"> 내가 꿈꾸는 내가 되는 시간: VENCLEFIT
 </div>
 
 
@@ -34,7 +32,7 @@
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
         // the link to your model provided by Teachable Machine export panel
-        const URL = "my_model/";
+        const URL = "./my_model/";
         let model, webcam, ctx, labelContainer, maxPredictions;
 
         // 예측 시작
@@ -90,6 +88,16 @@
 
             // finally draw the poses
             drawPose(pose);
+
+            const resultBlock = document.querySelector("#prediction");
+            const resultValue = document.createTextNode(prediction.toString());
+            if (resultBlock.firstElementChild === null) {
+
+                resultBlock.appendChild(resultValue);
+            }
+            else {
+                resultBlock.removeChild(resultValue);
+            }
             return prediction;
         }
 
@@ -107,9 +115,9 @@
 
         // webapp 실행 즉시 예측하기 위해 추가 
         init();
-
-
     </script>
 
+    <div id='prediction'>
 
+    </div>
 </div>
