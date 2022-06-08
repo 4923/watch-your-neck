@@ -104,6 +104,11 @@
             else {
                 resultBlock.removeChild(resultBlock.firstElementChild)
             }
+
+            // prediction progress bar
+            const progressBar = document.createElement("turtlebar");
+            progressBar.setAttribute("value", turtleBar);
+            progressBar.setAttribute("max", 100);
         }
 
         function drawPose(pose) {
@@ -123,6 +128,7 @@
     </script>
 
     <div id='prediction'>
+        <progress id="turtleBar"></progress>
     </div>
 
 </div>
